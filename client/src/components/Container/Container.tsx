@@ -9,9 +9,6 @@ const Paper = styled.div`
   flex-direction: column;
   align-items: center;
   background: white;
-  > div {
-    overflow: scroll;
-  }
 `;
 
 interface ContainerProps {
