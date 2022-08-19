@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useAuth from 'src/hooks/useAuth';
 import { SignInBox } from 'src/style/SignInForm.styled';
-import { Container, SignForm, Splash } from 'src/components';
+import { Container, SignForm, Splash, Footer } from 'src/components';
 import { Button } from '@mui/material';
 import { SignUpModal } from './components';
 
@@ -26,7 +26,7 @@ const Sign = () => {
       <Splash />
       <Container>
         <SignInBox>
-          <h1>Todos</h1>
+          <h1>로그인</h1>
           <SignForm submitAction={login} submitButtonText="Sign In" />
           <Button variant="text" onClick={handleIsShowSignUpModalOpen}>
             Sign Up
@@ -37,6 +37,7 @@ const Sign = () => {
           handleIsShowSignUpModalClose={handleIsShowSignUpModalClose}
           submitAction={signUp}
         />
+        <Footer/>
       </Container>
     </>
   );

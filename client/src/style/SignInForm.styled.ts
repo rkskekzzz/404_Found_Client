@@ -9,9 +9,8 @@ const SignInForm = styled.form`
   justify-content: center;
   gap: 20px;
   padding: 15%;
-  .TextField{
-    width : 100%;
-    border-color : C1E1FF;
+  #outlined-basic{
+    border : 1px solid #C1E0FF !important;
   }
 `;
 
@@ -28,6 +27,10 @@ const SignInBox = styled.div`
 
   h1 {
     text-align: center;
+    border-bottom : solid;
+    border-color : #CBCBCB;
+    border-width : 1px;
+    padding-bottom : 6vw;
   }
 `;
 
