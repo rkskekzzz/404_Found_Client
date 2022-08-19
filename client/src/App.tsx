@@ -4,6 +4,13 @@ import { Sign, Star, Main, Profile, Create } from 'src/pages';
 
 import './App.css';
 
+const AuthCheckRoute = () => {
+  if (window.localStorage.getItem('todoAuthToken')) {
+    return <Navigate to="/" replace />;
+  }
+  return <Outlet />;
+};
+
 const ProtectedRoute = () => {
   if (!window.localStorage.getItem('todoAuthToken')) {
     return <Navigate to="/auth" replace />;
@@ -15,7 +22,9 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/auth" element={<Sign />} />
+        <Route element={<AuthCheckRoute />}>
+          <Route path="/auth" element={<Sign />} />
+        </Route>
         <Route element={<ProtectedRoute />}>
           <Route path="/" element={<Main />} />
           <Route path="/star" element={<Star />} />
