@@ -53,6 +53,7 @@ const MapBox = ({ searchText }: MapBoxProps) => {
         height: '100vh',
       }}
       level={3}
+      // @ts-ignore
       onCreate={setMap}
     >
       {markers.map((marker) => (
