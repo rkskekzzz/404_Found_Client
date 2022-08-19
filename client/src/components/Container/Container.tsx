@@ -1,5 +1,4 @@
 import React from 'react';
-import { Box } from '@mui/material';
 import styled from '@emotion/styled';
 
 const Paper = styled.div`
@@ -20,13 +19,7 @@ interface ContainerProps {
 }
 
 const Container = ({ children }: ContainerProps) => {
-  return (
-    <Paper>
-      <Box width={500} height="100vh" alignItems="center" justifyContent="center">
-        {children}
-      </Box>
-    </Paper>
-  );
+  return <Paper>{children}</Paper>;
 };
 
 export default Container;

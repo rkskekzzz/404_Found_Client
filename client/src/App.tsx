@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
-import { Sign, Star, Main, Profile, Create } from 'src/pages';
+import { Sign, Star, Main, Profile, Create, NotFound } from 'src/pages';
 
 import './App.css';
 
@@ -13,7 +13,8 @@ const AuthCheckRoute = () => {
 
 const ProtectedRoute = () => {
   if (!window.localStorage.getItem('todoAuthToken')) {
-    return <Navigate to="/auth" replace />;
+    return <Outlet />;
+    // return <Navigate to="/auth" replace />;
   }
   return <Outlet />;
 };
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/create" element={<Create />} />
         </Route>
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
