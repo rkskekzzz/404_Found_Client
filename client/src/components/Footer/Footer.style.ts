@@ -8,6 +8,8 @@ const FooterContainer = styled.div`
   position: fixed;
   bottom: 0%;
   justify-content: center;
+  z-index: 50;
+  background: white;
 `;
 
 export default FooterContainer;

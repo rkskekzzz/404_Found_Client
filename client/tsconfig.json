@@ -7,6 +7,7 @@
       "es5",
       "es2015.promise"
     ] /* Specify a set of bundled library declaration files that describe the target runtime environment. */,
+    "types": ["node", "kakao.maps.d.ts", "custom.d.ts"],
     "jsx": "react" /* Specify what JSX code is generated. */,
     /* Modules */
     "module": "commonjs" /* Specify what module code is generated. */,
