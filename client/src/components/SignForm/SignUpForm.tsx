@@ -74,7 +74,7 @@ const SignUpForm = ({ submitAction, submitButtonText }: SignFormProps) => {
         value={password}
         onChange={handlePasswordChange}
         id="outlined-basic"
-        label="e-mail"
+        label="password"
         variant="outlined"
         fullWidth
       />

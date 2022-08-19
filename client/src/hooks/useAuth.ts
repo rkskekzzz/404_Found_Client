@@ -22,7 +22,12 @@ const useAuth = () => {
   };
 
   const register = async (nickname: string, email: string, password: string, password2: string) => {
-    authController.register(nickname, email, password, password2).then(handleSignIn).catch(handleAuthError);
+    authController
+      .register(nickname, email, password, password2)
+      .then((data) => {
+        console.log(data);
+      })
+      .catch(handleAuthError);
   };
 
   useEffect(() => {
