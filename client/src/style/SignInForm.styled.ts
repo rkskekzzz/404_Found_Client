@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { TextField } from '@mui/material';
 
 const SignInForm = styled.form`
   width: 100%;
@@ -8,9 +9,18 @@ const SignInForm = styled.form`
   justify-content: center;
   gap: 20px;
   padding: 15%;
+  .TextField{
+    width : 100%;
+    border-color : C1E1FF;
+  }
 `;
 
 const SignInBox = styled.div`
+    width : 90vw;
+  @media (min-width: 760px) {
+    width : 500px;
+
+  }
   display: flex;
   flex-direction: column;
   justify-content: center;

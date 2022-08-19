@@ -44,6 +44,7 @@ const SignForm = ({ submitAction, submitButtonText }: SignFormProps) => {
   return (
     <SignInForm onSubmit={handleSubmit}>
       <TextField
+        className="TextField"
         type="email"
         name="email"
         value={email}
@@ -52,8 +53,10 @@ const SignForm = ({ submitAction, submitButtonText }: SignFormProps) => {
         label="e-mail"
         variant="outlined"
         fullWidth
+        
       />
       <TextField
+        className='TextField'
         type="password"
         name="password"
         autoComplete="off"
@@ -65,6 +68,7 @@ const SignForm = ({ submitAction, submitButtonText }: SignFormProps) => {
         fullWidth
       />
       <Button
+        className='Button'
         fullWidth
         type="submit"
         variant="contained"
