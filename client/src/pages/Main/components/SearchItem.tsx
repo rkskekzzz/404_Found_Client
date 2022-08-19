@@ -12,16 +12,16 @@ const SearchItem = ({ items, searchText }: SearchItemProps) => {
   const autoCompliteItem = (items: Item[]): Item[] => {
     return items.filter((item) => item.name.includes(searchText));
   };
+  if (searchText === '') return <></>;
   return (
     <SearchItemContainer>
       {autoCompliteItem(items).map((item) => (
-        <>
-          <div className="item" key={item.id}>
-            {item.name}
-          </div>
+        <React.Fragment key={item.id}>
+          <div className="item">{item.name}</div>
           <Divider />
-        </>
+        </React.Fragment>
       ))}
+      {autoCompliteItem(items).length === 0 && <div className="item">검색 결과가 없습니다.</div>}
     </SearchItemContainer>
   );
 };

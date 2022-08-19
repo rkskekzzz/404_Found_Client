@@ -7,7 +7,7 @@ const SearchItemContainer = styled.div`
   border-radius: 7px;
   padding: 10px;
   .item {
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 5px 20px;
   }
 `;
