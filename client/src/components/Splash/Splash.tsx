@@ -9,7 +9,7 @@ const Splash = () => {
         <img src='./logo.png' alt="Logo"/>
         <div className='title'>
           <h1>4</h1>
-          <CircularProgress />
+          <CircularProgress size="1.5em"/>
           <h1>4 FOUND</h1>
         </div>
       </div>
