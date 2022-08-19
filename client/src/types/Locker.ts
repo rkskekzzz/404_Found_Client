@@ -1,5 +1,5 @@
 export type Locker = {
-  id: number;
+  id: string;
   location: string;
   start_time: number;
   end_time: number;

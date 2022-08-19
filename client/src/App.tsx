@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
-import { Sign, Star, Main, Profile, Create, NotFound, Register } from 'src/pages';
+import { Sign, Star, Main, Profile, Create, NotFound, Register, LockerItem } from 'src/pages';
 
 import './App.css';
 
@@ -32,6 +32,7 @@ const App = () => {
           <Route path="/star" element={<Star />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/create" element={<Create />} />
+          <Route path="/locker/:id" element={<LockerItem />} />
         </Route>
         <Route path="/*" element={<NotFound />} />
       </Routes>
