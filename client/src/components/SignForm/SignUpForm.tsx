@@ -3,6 +3,7 @@ import { validationCheckWithEmailPassword } from 'src/validation/validationCheck
 import { SignContainer } from 'src/style/SignContainer.styled';
 import { TextField, Button } from '@mui/material';
 
+
 interface SignFormProps {
   submitAction: (nickname: string, email: string, password: string, password2: string) => Promise<void>;
   submitButtonText: string;
