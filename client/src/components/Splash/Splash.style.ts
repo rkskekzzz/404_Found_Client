@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
 
 const SplashContainer = styled.div`
-  background: #65B3FF;
+  background: #65b3ff;
   display: flex;
   position: fixed;
   width: 100%;
   height: 100%;
   justify-content: center;
   align-items: center;
-  animation: fadeOut 100s ease-in-out 0s forwards;
+  animation: fadeOut 1s ease-in-out 0s forwards;
 
   @keyframes fadeOut {
     0% {
@@ -28,16 +28,15 @@ const SplashContainer = styled.div`
     flex-direction: column;
   }
 
-  .title{
+  .title {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  h1{
-    margin : 3px;
+  h1 {
+    margin: 3px;
   }
-
 `;
 
 export default SplashContainer;
