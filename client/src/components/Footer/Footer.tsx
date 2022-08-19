@@ -26,16 +26,20 @@ const Footer = () => {
 
   return (
     <FooterContainer>
-      <Button onClick={handleMainClick}>{checkCurrentPath('/') ? <HomeActivateIcon /> : <HomeDeactivateIcon />}</Button>
-      <Button onClick={handleStarClick}>
-        {checkCurrentPath('/star') ? <StarActivateIcon /> : <StarDeactivateIcon />}
-      </Button>
-      <Button onClick={handleCreateClick}>
-        {checkCurrentPath('/create') ? <CreateActivateIcon /> : <CreateDeactivateIcon />}
-      </Button>
-      <Button onClick={handleProfileClick}>
-        {checkCurrentPath('/profile') ? <ProfileActivateIcon /> : <ProfileDeactivateIcon />}
-      </Button>
+      <div className="buttons">
+        <Button onClick={handleMainClick}>
+          {checkCurrentPath('/') ? <HomeActivateIcon /> : <HomeDeactivateIcon />}
+        </Button>
+        <Button onClick={handleStarClick}>
+          {checkCurrentPath('/star') ? <StarActivateIcon /> : <StarDeactivateIcon />}
+        </Button>
+        <Button onClick={handleCreateClick}>
+          {checkCurrentPath('/create') ? <CreateActivateIcon /> : <CreateDeactivateIcon />}
+        </Button>
+        <Button onClick={handleProfileClick}>
+          {checkCurrentPath('/profile') ? <ProfileActivateIcon /> : <ProfileDeactivateIcon />}
+        </Button>
+      </div>
     </FooterContainer>
   );
 };

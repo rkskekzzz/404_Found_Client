@@ -10,6 +10,18 @@ const FooterContainer = styled.div`
   justify-content: center;
   z-index: 50;
   background: white;
+
+  .buttons {
+    width: 100%;
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+    display: flex;
+    justify-content: space-around;
+  }
+  * {
+    width: 100%;
+  }
 `;
 
 export default FooterContainer;

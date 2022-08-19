@@ -1,31 +1,33 @@
 import React, { useState } from 'react';
 import SearchBarContainer from './SearchBar.style';
+import SearchItem from './SearchItem';
 import { ReactComponent as SearchIcon } from 'src/assets/search.svg';
 
-type Item = {
+export type Item = {
   id: string;
   lat: number;
   lng: number;
   name: string;
 };
+
 const dummyitem: Item[] = [
   {
     id: 'asdf',
     lat: 1234,
     lng: 1234,
-    name: 'hi',
+    name: '반월당역',
   },
   {
     id: 'asdfasdf',
     lat: 1234,
     lng: 1234,
-    name: 'hi',
+    name: '반월당역 2',
   },
   {
     id: 'asdfzxcv',
     lat: 1234,
     lng: 1234,
-    name: 'hi',
+    name: '반월당역 2',
   },
 ];
 
@@ -36,10 +38,6 @@ const SearchBar = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     console.log('여기서 중심좌표 이동');
-  };
-
-  const autoCompliteItem = (items: Item[]): Item[] => {
-    return items.filter((item) => item.name.includes(searchText));
   };
 
   return (
@@ -54,11 +52,7 @@ const SearchBar = () => {
           placeholder="장소, 주소를 검색해주세요"
         />
       </form>
-      <div>
-        {autoCompliteItem(dummyitem).map((item) => (
-          <div key={item.id}>{item.name}</div>
-        ))}
-      </div>
+      <SearchItem items={dummyitem} searchText={searchText} />
     </SearchBarContainer>
   );
 };

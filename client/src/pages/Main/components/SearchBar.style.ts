@@ -7,10 +7,14 @@ const SearchBarContainer = styled.div`
   z-index: 50;
   left: 50%;
   transform: translateX(-50%);
-
+  flex-direction: column;
+  gap: 10px;
   .search {
     background: white;
-    width: 30vw;
+    width: 90vw;
+    @media (min-width: 768px) {
+      width: 50vw;
+    }
     height: 5vh;
     border: 0px;
     box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.2);
@@ -24,7 +28,7 @@ const SearchBarContainer = styled.div`
       color: #ecf6ff;
     }
     input {
-      font-size: 1rem;
+      font-size: 1.1rem;
       flex: 1 1 0;
       border: 0px;
     }
