@@ -10,7 +10,6 @@ const Sign = () => {
   const navigate = useNavigate();
   const [isShowSignUpModal, setShowSignUpModal] = useState<boolean>(false);
   const { isSignedIn, login, signUp } = useAuth();
-  const [isShowSplash, setIsShowSplash] = useState(true);
 
   const handleIsShowSignUpModalOpen = () => setShowSignUpModal(true);
   const handleIsShowSignUpModalClose = () => setShowSignUpModal(false);
@@ -22,18 +21,9 @@ const Sign = () => {
     }
   }, [isSignedIn]);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsShowSplash(false);
-    }, 33000);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
-
   return (
     <>
-      <Splash isShowSplash={isShowSplash} />
+      <Splash />
       <Container>
         <SignInBox>
           <h1>Todos</h1>

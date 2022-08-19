@@ -2,11 +2,7 @@ import React from 'react';
 import { CircularProgress } from '@mui/material';
 import SplashContainer from './Splash.style';
 
-interface SplashProps {
-  isShowSplash: boolean;
-}
-
-const Splash = ({ isShowSplash }: SplashProps) => {
+const Splash = () => {
   return (
     <SplashContainer>
       <div>logo</div>

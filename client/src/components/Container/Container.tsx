@@ -9,6 +9,7 @@ const Paper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: white;
   > div {
     overflow: scroll;
   }
@@ -21,12 +22,7 @@ interface ContainerProps {
 const Container = ({ children }: ContainerProps) => {
   return (
     <Paper>
-      <Box
-        width={500}
-        height="100vh"
-        alignItems="center"
-        justifyContent="center"
-      >
+      <Box width={500} height="100vh" alignItems="center" justifyContent="center">
         {children}
       </Box>
     </Paper>
