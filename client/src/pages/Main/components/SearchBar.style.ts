@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 const SearchBarContainer = styled.div`
   display: flex;
   position: fixed;
-  top: 10px;
+  top: 20px;
   z-index: 50;
   left: 50%;
   transform: translateX(-50%);

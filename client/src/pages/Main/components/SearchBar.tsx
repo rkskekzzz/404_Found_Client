@@ -31,13 +31,17 @@ const dummyitem: Item[] = [
   },
 ];
 
-const SearchBar = () => {
-  const [searchText, setSearchText] = useState('');
+interface SearchBarProps {
+  handleSearchTextChanged: (currentText: string) => void;
+}
 
-  const handleSearchTextChanged = ({ target: { value } }) => setSearchText(value);
+const SearchBar = ({ handleSearchTextChanged }: SearchBarProps) => {
+  const [currentText, setCurrentText] = useState('');
+  const handleCurrentTextChanged = ({ target: { value } }) => setCurrentText(value);
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log('여기서 중심좌표 이동');
+    console.log(currentText);
+    handleSearchTextChanged(currentText);
   };
 
   return (
@@ -47,12 +51,12 @@ const SearchBar = () => {
         <input
           type="text"
           name="text"
-          value={searchText}
-          onChange={handleSearchTextChanged}
+          value={currentText}
+          onChange={handleCurrentTextChanged}
           placeholder="장소, 주소를 검색해주세요"
         />
       </form>
-      <SearchItem items={dummyitem} searchText={searchText} />
+      <SearchItem items={dummyitem} searchText={currentText} />
     </SearchBarContainer>
   );
 };

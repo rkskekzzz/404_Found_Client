@@ -1,3 +1,4 @@
 import SearchBar from './SearchBar';
+import MapBox from './MapBox';
 
-export default SearchBar;
+export { SearchBar, MapBox };
