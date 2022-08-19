@@ -3,7 +3,6 @@ import { validationCheckWithEmailPassword } from 'src/validation/validationCheck
 import { SignContainer } from 'src/style/SignContainer.styled';
 import { TextField, Button } from '@mui/material';
 
-
 interface SignFormProps {
   submitAction: (nickname: string, email: string, password: string, password2: string) => Promise<void>;
   submitButtonText: string;
@@ -11,25 +10,25 @@ interface SignFormProps {
 
 const SignUpForm = ({ submitAction, submitButtonText }: SignFormProps) => {
   const [nickname, setNickname] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
+  const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [password2, setPassword2] = useState<string>('');
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
 
   const handleNicknameChange = ({ target: { value } }) => setNickname(value);
-  const handleEmailChange = ({ target: { value } }) => setEmail(value);
+  const handleUsernameChange = ({ target: { value } }) => setUsername(value);
   const handlePasswordChange = ({ target: { value } }) => setPassword(value);
   const handlePassword2Change = ({ target: { value } }) => setPassword2(value);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsButtonDisabled(true);
-    switch (validationCheckWithEmailPassword(email, password)) {
+    switch (validationCheckWithEmailPassword(username, password)) {
       case 'Success':
-        await submitAction(nickname, email, password, password2);
+        await submitAction(nickname, username, password, password2);
         break;
-      case 'EmailError':
-        alert('Please enter a valid email');
+      case 'UsernameError':
+        alert('Please enter a valid username');
         break;
       case 'PasswordError':
         alert('Please enter a valid password');
@@ -41,10 +40,10 @@ const SignUpForm = ({ submitAction, submitButtonText }: SignFormProps) => {
   };
 
   useEffect(() => {
-    if (email.length > 0 && password.length > 0) {
+    if (username.length > 0 && password.length > 0) {
       setIsButtonDisabled(false);
     }
-  }, [email, password]);
+  }, [username, password]);
 
   return (
     <SignContainer onSubmit={handleSubmit}>
@@ -61,8 +60,8 @@ const SignUpForm = ({ submitAction, submitButtonText }: SignFormProps) => {
       <TextField
         type="email"
         name="email"
-        value={email}
-        onChange={handleEmailChange}
+        value={username}
+        onChange={handleUsernameChange}
         id="outlined-basic"
         label="e-mail"
         variant="outlined"

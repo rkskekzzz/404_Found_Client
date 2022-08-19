@@ -21,9 +21,9 @@ const useAuth = () => {
     authController.login(email, password).then(handleSignIn).catch(handleAuthError);
   };
 
-  const register = async (nickname: string, email: string, password: string, password2: string) => {
+  const register = async (nickname: string, username: string, password: string, password2: string) => {
     authController
-      .register(nickname, email, password, password2)
+      .register(nickname, username, password, password2)
       .then((data) => {
         console.log(data);
       })

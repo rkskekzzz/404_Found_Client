@@ -23,8 +23,8 @@ const SignInForm = ({ submitAction, submitButtonText }: SignFormProps) => {
       case 'Success':
         await submitAction(email, password);
         break;
-      case 'EmailError':
-        alert('Please enter a valid email');
+      case 'UsernameError':
+        alert('Please enter a valid username');
         break;
       case 'PasswordError':
         alert('Please enter a valid password');
