@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
 
 const SplashContainer = styled.div`
-  background: blue;
+  background: #65B3FF;
   display: flex;
-  flex-direction: column;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -26,6 +25,13 @@ const SplashContainer = styled.div`
 
   .logo {
     display: flex;
+    flex-direction: column;
+  }
+
+  .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 

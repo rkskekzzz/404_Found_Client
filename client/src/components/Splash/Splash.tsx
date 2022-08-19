@@ -5,11 +5,13 @@ import SplashContainer from './Splash.style';
 const Splash = () => {
   return (
     <SplashContainer>
-      <div>logo</div>
       <div className="logo">
-        <h1>4</h1>
-        <CircularProgress />
-        <h1>4 FOUND</h1>
+        <img src='./logo.png' alt="Logo"/>
+        <div className='title'>
+          <h1>4</h1>
+          <CircularProgress />
+          <h1>4 FOUND</h1>
+        </div>
       </div>
     </SplashContainer>
   );
