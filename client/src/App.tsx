@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
-import { Sign, Star, Main, Profile, Create, NotFound } from 'src/pages';
+import { Sign, Star, Main, Profile, Create, NotFound, Register } from 'src/pages';
 
 import './App.css';
 
@@ -25,6 +25,7 @@ const App = () => {
       <Routes>
         <Route element={<AuthCheckRoute />}>
           <Route path="/auth" element={<Sign />} />
+          <Route path="/auth/register" element={<Register />} />
         </Route>
         <Route element={<ProtectedRoute />}>
           <Route path="/" element={<Main />} />

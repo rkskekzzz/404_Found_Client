@@ -21,8 +21,8 @@ const useAuth = () => {
     authController.login(email, password).then(handleSignIn).catch(handleAuthError);
   };
 
-  const signUp = async (email: string, password: string) => {
-    authController.signUp(email, password).then(handleSignIn).catch(handleAuthError);
+  const register = async (nickname: string, email: string, password: string, password2: string) => {
+    authController.register(nickname, email, password, password2).then(handleSignIn).catch(handleAuthError);
   };
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const useAuth = () => {
     isSignedIn,
     signStateMessage,
     login,
-    signUp,
+    register,
   };
 };
 

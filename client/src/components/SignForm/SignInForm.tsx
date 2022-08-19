@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { validationCheckWithEmailPassword } from 'src/validation/validationCheck';
-import { SignInForm } from 'src/style/SignInForm.styled';
+import { SignContainer } from 'src/style/SignContainer.styled';
 import { TextField, Button } from '@mui/material';
 
 interface SignFormProps {
@@ -8,7 +8,7 @@ interface SignFormProps {
   submitButtonText: string;
 }
 
-const SignForm = ({ submitAction, submitButtonText }: SignFormProps) => {
+const SignInForm = ({ submitAction, submitButtonText }: SignFormProps) => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
@@ -42,7 +42,7 @@ const SignForm = ({ submitAction, submitButtonText }: SignFormProps) => {
   }, [email, password]);
 
   return (
-    <SignInForm onSubmit={handleSubmit}>
+    <SignContainer onSubmit={handleSubmit}>
       <TextField
         type="email"
         name="email"
@@ -52,8 +52,6 @@ const SignForm = ({ submitAction, submitButtonText }: SignFormProps) => {
         label="e-mail"
         variant="outlined"
         fullWidth
-        
-        
       />
       <TextField
         type="password"
@@ -65,19 +63,12 @@ const SignForm = ({ submitAction, submitButtonText }: SignFormProps) => {
         label="password"
         variant="outlined"
         fullWidth
-        
       />
-      <Button
-        fullWidth
-        type="submit"
-        variant="contained"
-        disabled={isButtonDisabled}
-        
-      >
+      <Button className="Button" fullWidth type="submit" variant="contained" disabled={isButtonDisabled}>
         {submitButtonText}
       </Button>
-    </SignInForm>
+    </SignContainer>
   );
 };
 
-export default SignForm;
+export default SignInForm;

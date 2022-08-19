@@ -1,3 +1,4 @@
 import Sign from './Sign';
+import Register from './components';
 
-export default Sign;
+export { Sign, Register };

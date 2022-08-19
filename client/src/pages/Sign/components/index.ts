@@ -1,3 +1,3 @@
-import SignUpModal from './SignUpModal';
+import Register from './Register';
 
-export { SignUpModal };
+export default Register;
