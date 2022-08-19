@@ -8,7 +8,7 @@ const SplashContainer = styled.div`
   height: 100%;
   justify-content: center;
   align-items: center;
-  animation: fadeOut 1s ease-in-out 0s forwards;
+  animation: fadeOut 100s ease-in-out 0s forwards;
 
   @keyframes fadeOut {
     0% {
@@ -33,6 +33,11 @@ const SplashContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
+
+  h1{
+    margin : 3px;
+  }
+
 `;
 
 export default SplashContainer;
